@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Open New Tab of your Browser with MyStartPage.net Custom Homepage where you can save all your Favorite Websites.">
+  <meta name="keywords" content="homepage,startpage,new tab,browser home">
+  <title>My Start Page</title>
+  <meta property="og:image" content="image.png" />
+  <link rel="stylesheet" href="https://mystartpage.net/css/style.1.0.2.css">
+  <script src="https://kit.fontawesome.com/f9a823940e.js" crossorigin="anonymous"></script>
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="css/style_ie.1.0.2.css">
+    <script src="./script/html5shiv.min.js"></script>
+    <script src="./script/respond.min.js"></script>
+  <![endif]-->
+  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,300&subset=latin,cyrillic">-->
+  <!-- scripts -->
+  <script src="https://mystartpage.net/script/jquery-1.12.4.min.js"></script>
+  <script src="https://mystartpage.net/script/localized.1.0.3.js"></script>
+  <script src="https://mystartpage.net/script/main.1.0.7.js"></script>
+  <!-- scripts.end -->
+  <style>
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="main-header">
+    <div class="grid-wrapper">
+      <p></p><i class="fas fa-globe"></i><strong> MY STARTPAGE</strong>™ <div class="share">
+        <i class="fas fa-newspaper"></i> <a href="https://deliverbit.com" target="_blank">NEWS</a> &nbsp; <i
+          class="fas fa-image"></i> <a href="https://photosearch.tv" target="_blank">IMG</a> &nbsp; <i
+          class="fas fa-tachometer-alt"></i> <a href="https://speedtest.xyz" target="_blank">SPEED</a></div>
+    </div>
+  </nav>
+  <div class="content-wrapper center-wrapper">
+
+
+
+    <section class="section-search-bar">
+      <div class="grid-wrapper">
+        <div class="search-bar">
+          <form id="search_form" action="https://www.google.com/search" method="get" target="_top">
+            <input type="text" name="q" class="input" autocomplete="off" placeholder="Search the Web">
+            <button type="submit" class="search-bar__submit"><span class="search-bar__submit-ico"></span></button>
+            <div class="search-dropdown">
+              <button type="button" class="search-dropdown__trigger"><span
+                  class="search-dropdown__ico search-dropdown__ico_google"></span></button>
+              <ul class="search-dropdown__list">
+                <li class="search-dropdown__item"><span
+                    class="search-dropdown__ico search-dropdown__ico_google"></span>Google
+                </li>
+                <li class="search-dropdown__item"><span
+                    class="search-dropdown__ico search-dropdown__ico_bing  "></span>Bing
+                </li>
+                <li class="search-dropdown__item"><span
+                    class="search-dropdown__ico search-dropdown__ico_yahoo "></span>Yahoo
+                </li>
+                <li class="search-dropdown__item"><span
+                    class="search-dropdown__ico search-dropdown__ico_yandex"></span>Yandex
+                </li>
+              </ul>
+            </div>
+            <div id="autocomplete"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-preview-tabs">
+      <div class="grid-wrapper">
+        <div class="grid" id="addedSites">
+
+
+
+          <div class="grid__item addButton">
+            <div class="preview-tab preview-tab_new">
+              <div class="preview-tab_new_connector"></div>
+            </div>
+          </div>
+          <div class="new-tab-adding">
+            <p class="heading add_site_head">Add Site</p>
+            <div class="new-tab-adding__form">
+              <form action="#">
+                <button type="submit" class="btn">Add</button>
+                <div class="new-tab-adding__input-wrapper"><input type="text" class="input"
+                    placeholder="Enter site address"></div>
+              </form>
+            </div>
+            <p class="heading popupar_heading">Popular Sites</p>
+            <div class="grid-wrapper">
+              <div class="grid" id="popularSites">
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="main-footer">
+    <div class="grid-wrapper">
+      <p>&copy; 2020 MyStartPage by <a href="https://websyrup.net" target="_blank">WebSyrup</a> | <a onclick=""
+          href="privacy.html" class="сonfident_text" target="_blank">Privacy Policy</a> | <a class="contacts_text"
+          href="mailto:info@mystartpage.net">contact</a> | <i class="fas fa-sun"></i> <a href="https://weathermetro.com"
+          target="_blank">WEATHER</a> <!-- Trigger/Open The Modal -->
+        <button id="myBtn">instructions</button>
+        <select class="lang_selector">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="ar">Arabic</option>
+          <option value="id">Indonesian</option>
+          <option value="th">Thai</option>
+          <option value="vi">Vietnamese</option>
+          <option value="pl">Polish</option>
+          <option value="bg">Bulgarian</option>
+          <option value="he">Hebrew</option>
+          <option value="cs">Czech</option>
+        </select>
+      </p>
+      <p>
+      <div class="disclaimer">All product names, logos, and brands are property of their respective owners. All company,
+        product and service names used in this website are for identification purposes only.</div>
+      </p>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <div class="addthis_inline_share_toolbox"></div>
+    </div>
+
+
+  </footer>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p><strong>This page works thanks to the data saved on your PC, if you clean your Browser from Cookies you could
+          delete all the saved sites, what you see here is not online and is not shared.</strong><br><br>
+        1) You can add as many sites as you want, you have an example of how they will look, to delete them just go to
+        the image and click on the "X".<br><br>
+        2) To add your sites go to the empty box with the "+" symbol, a form will open where you can insert the URL,
+        done this click on "Add", the site will appear among the tabs on the page every time you enter the site from the
+        same PC.<br><br>
+        *if you can't see site previews, change your IP by turning off and restarting your modem.</p>
+    </div>
+
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+  <!--Start Cookie Script-->
+  <script type="text/javascript" charset="UTF-8"
+    src="//eu.cookie-script.com/s/6130ac72ad1ba8f1e93ad4e9fed7f10d.js"></script>
+  <!--End Cookie Script-->
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dcfe437df049fc3"></script>
+
+</body>
+
+</html>
